@@ -9,8 +9,8 @@
     "doc": "jsdoc -c ./jsdoc.json",
     "test": "nyc  --reporter=lcov --reporter=text npm run coverage"
   },
-  "nyc":{
-    "inculde":".js",
+  "nyc": {
+    "inculde": ".js",
     "exclude": "node_modules"
   },
   "author": "",
