@@ -73,16 +73,21 @@ const{
   * "/item/create": {
   *   "post": {
   *     "summary": "create todos ",
+  *     "operationId": "getPetById",
   *     "tags": [todos],
-  *     "securitySchemes":{
-  *         "bearerAuth":{
-  *          "type": "http",
-  *          "scheme": "bearer",
-  *          "bearerFormat": "JWT"
-  *         }
-  *     },
+  *      "security": {
+  *      "bearerAuth": {
+  *           type: 'apiKey',
+  *            name: 'x-auth-token',
+  *            scheme: 'bearer',
+  *            in: 'header',
+  *            value: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *          }
+  *      },
   *     "requestBody": {
   *      "required": true,
+  *      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
   *      "content": {
   *      "application/json": {
   *       "schema": {
@@ -182,6 +187,16 @@ router.get('/getItems', getItems)
   *    "put": {
   *       "summary": "update todo",
   *       "tags": [todos],
+  *      "security": {
+  *      "bearerAuth": {
+  *           type: 'apiKey',
+  *            name: 'x-auth-token',
+  *            scheme: 'bearer',
+  *            in: 'header',
+  *            value: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *          }
+  *      },
   *       "parameters": [{
   *          "in": "path",
   *          "name": "id",
@@ -243,6 +258,16 @@ router.put('/updateItem/:id',authMiddleware, updateItem)
   *    "delete": {
   *       "summary": "delete todo",
   *       "tags": [todos],
+  *      "security": {
+  *      "bearerAuth": {
+  *           type: 'apiKey',
+  *            name: 'x-auth-token',
+  *            scheme: 'bearer',
+  *            in: 'header',
+  *            value: "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *            "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMzU1NjY1ZTkwYjM4MjA0MjRjOTYyZSIsImlhdCI6MTYxNDEzNjMwMywiZXhwIjoxNjE0MjQ0MzAzfQ.IK8nMCMr-noxInFRl7zCFQizRApLGECMyqRhSN2KGzI",
+  *          }
+  *      },
   *       "parameters": [{
   *           "in": "path",
   *           "name": "id",
